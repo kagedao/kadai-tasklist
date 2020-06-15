@@ -5,7 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class DBUtil {
-    private static final String PERSISTENCE_UNIT_NAME = "tasklist";
+    private static final String PERSISTENCE_UNIT_NAME = "tasklist"; // PERSISTENCE_UNIT_NAMEにこのプロジェクトの名であるtasklistと名付けた
     private static EntityManagerFactory emf;
 
     public static EntityManager createEntityManager() {
