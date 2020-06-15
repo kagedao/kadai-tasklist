@@ -7,10 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tasks")
+@NamedQueries({
+    @NamedQuery(
+            name = "getAllTasks", // Taskというクラス名で全検索かけるquery文をgetAllTasksと名付けた
+            query = "SELECT m FROM Task AS m ORDER BY m.id DESC"
+            )
+})
+@Table(name = "tasks") // テーブル名はtasksである
 public class Task {
     @Id
     @Column(name = "id")
